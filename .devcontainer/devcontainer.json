@@ -42,8 +42,9 @@
 		"GitHub.vscode-pull-request-github",
 		"MS-vsliveshare.vsliveshare",
 		"VisualStudioExptTeam.vscodeintellicode",
-        "getgauge.gauge",
-        "george-alisson.html-preview-vscode"
+		"vscjava.vscode-java-pack",
+        	"getgauge.gauge",
+        	"george-alisson.html-preview-vscode"
 	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
