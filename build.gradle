@@ -26,7 +26,7 @@ import com.thoughtworks.gauge.gradle.*
 
 def languages = ['java', 'js', 'csharp', 'dotnet', 'ruby', 'python']
 
-def plugins = ['spectacle']
+def plugins = ['spectacle', 'jira']
 
 languages.each {lang ->
     task "${lang}FT" (type: GaugeTask) {
