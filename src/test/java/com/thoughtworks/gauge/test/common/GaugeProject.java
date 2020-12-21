@@ -299,6 +299,12 @@ public abstract class GaugeProject {
         return new ExecutionSummary(String.join(" ", args), success, lastProcessStdout, lastProcessStderr);
     }
 
+    public ExecutionSummary generateJiraDocumentation() throws Exception {
+        String[] args = new String[]{"docs", "jira", "specs/"};
+        boolean success = executeGaugeCommand(args, null);
+        return new ExecutionSummary(String.join(" ", args), success, lastProcessStdout, lastProcessStderr);
+    }
+
     public ExecutionSummary validate() throws Exception {
         return execute(new String[]{"validate", "specs/"}, null);
     }
