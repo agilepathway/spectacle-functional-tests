@@ -19,7 +19,7 @@ Basic spec with one scenario
 
 * Generate Jira Documentation for the current project
 
-* Console should contain "Succesfully converted specs to html"
+* Console should contain "Successfully exported specs to Jira"
 
 * Verify Spectacle Documentation
 
