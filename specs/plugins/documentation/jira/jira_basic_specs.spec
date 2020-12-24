@@ -20,9 +20,3 @@ Basic spec with one scenario
 * Generate Jira Documentation for the current project
 
 * Console should contain "Successfully exported specs to Jira"
-
-* Verify Spectacle Documentation
-
-|totalSpecificationsCount |totalScenariosCount |
-|-------------------------|--------------------|
-|1                        |1                   |
