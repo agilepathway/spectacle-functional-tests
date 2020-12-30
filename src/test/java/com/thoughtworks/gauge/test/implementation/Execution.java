@@ -193,8 +193,8 @@ public class Execution {
         assertOn(getCurrentProject().generateSpectacleDocumentation(), true);
     }
 
-    @Step("Generate Jira Documentation for the current project")
-    public void generateJiraDocumentationForCurrentProject() throws Exception {
-        assertOn(getCurrentProject().generateJiraDocumentation(), true);
+    @Step("Publish Jira Documentation for the current project")
+    public void publishJiraDocumentationForCurrentProject() throws Exception {
+        assertOn(getCurrentProject().publishJiraDocumentation(), true);
     }
 }

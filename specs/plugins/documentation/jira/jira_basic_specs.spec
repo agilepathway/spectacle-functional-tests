@@ -17,6 +17,6 @@ Basic spec with one scenario
    |Third step              |"inside third step"                                     |
    |Step with "two" "params"|"inside step with parameters : " + param0 + " " + param1|
 
-* Generate Jira Documentation for the current project
+* Publish Jira Documentation for the current project
 
 * Console should contain "Successfully exported specs to Jira"
