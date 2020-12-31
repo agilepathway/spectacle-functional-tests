@@ -1,21 +1,27 @@
-FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
+# [Choice] Java version: 11, 15
+ARG VARIANT=15
+FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
 
-USER root
+# [Option] Install Maven
+ARG INSTALL_MAVEN="false"
+ARG MAVEN_VERSION=""
+# [Option] Install Gradle
+ARG INSTALL_GRADLE="true"
+ARG GRADLE_VERSION=""
+RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install maven \"${MAVEN_VERSION}\""; fi \
+    && if [ "${INSTALL_GRADLE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install gradle \"${GRADLE_VERSION}\""; fi
 
-# [Option] Install Docker CLI
-ARG INSTALL_DOCKER="false"
-COPY library-scripts/docker-debian.sh /tmp/library-scripts/
-RUN if [ "${INSTALL_DOCKER}" = "true" ]; then \
-        rm -f /usr/local/share/docker-init.sh \
-        && bash /tmp/library-scripts/docker-debian.sh "true" "/var/run/docker-host.sock" "/var/run/docker.sock" "codespace"; \
-    fi \
-    && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/
+# [Option] Install Node.js
+ARG INSTALL_NODE="false"
+ARG NODE_VERSION="lts/*"
+RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-COPY library-scripts/python-debian.sh /tmp/library-scripts/
-RUN bash /tmp/library-scripts/python-debian.sh \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-USER codespace
+# [Optional] Uncomment this line to install global node packages.
+# RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 # Install gauge
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
