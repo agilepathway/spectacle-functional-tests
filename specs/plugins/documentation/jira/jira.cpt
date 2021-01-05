@@ -11,3 +11,10 @@ It's only for convenience that we're including the issue key in the specificatio
    |Second step             |"inside second step"                                    |
    |Third step              |"inside third step"                                     |
    |Step with "two" "params"|"inside step with parameters : " + param0 + " " + param1|
+
+
+# Create two specifications linked to Jira issue(s) <issuekey>
+
+* Create a basic scenario linked to Jira issue(s) "first spec linked to JIRAGAUGE-6"
+
+* Create a basic scenario linked to Jira issue(s) "second spec linked to JIRAGAUGE-6"
