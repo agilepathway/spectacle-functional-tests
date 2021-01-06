@@ -18,4 +18,4 @@ Two specs linked to same Jira issue
 
 ___
 
-* Set description "" on Jira issue "JIRAGAUGE-6"
+Set description "" on Jira issue "JIRAGAUGE-6"

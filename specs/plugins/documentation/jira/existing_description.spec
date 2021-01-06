@@ -20,4 +20,4 @@ Basic Jira spec
 
 ___
 
-* Set description "" on Jira issue "JIRAGAUGE-5"
+Set description "" on Jira issue "JIRAGAUGE-5"

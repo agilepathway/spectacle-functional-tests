@@ -20,5 +20,5 @@ Basic Jira spec linked to two Jira issues
 
 ___
 
-* Set description "" on Jira issue "JIRAGAUGE-3"
-* Set description "" on Jira issue "JIRAGAUGE-4"
+Set description "" on Jira issue "JIRAGAUGE-3"
+Set description "" on Jira issue "JIRAGAUGE-4"
